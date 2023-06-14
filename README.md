@@ -28,7 +28,6 @@ This is the README file for the Football Management Web App. The web app is desi
 
 - **Ajax UI Rendering:** Use Ajax (Asynchronous JavaScript and XML) to re-render the UI in search and filter functions, providing a smoother and more responsive user experience.
 
-- **User-Friendly Interface:** Create a user-friendly and visually appealing interface that allows users to easily navigate and use the platform.
 
 ## Getting Started
 
