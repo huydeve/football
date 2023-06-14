@@ -1,7 +1,9 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - foodball-stg
+name: Build and deploy Node.js app to Azure Web App - football-stg
 
 on:
   push:
@@ -24,8 +26,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install --force
-          npm run build 
-          
+          npm run build --if-present
+
       - name: Zip all files for upload between jobs
         run: zip --symlinks -r express.zip ./*
 
@@ -34,7 +36,7 @@ jobs:
         with:
           name: node-app
           path: express.zip
-          
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -55,7 +57,7 @@ jobs:
           app-name: 'football-stg'
           slot-name: 'production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
-          path: express.zip
+          package: express.zip
           
       - name: Delete zip file
         run: rm express.zip
