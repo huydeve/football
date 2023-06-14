@@ -4,21 +4,16 @@ import { google } from 'googleapis';
 
 
 
-const CLIENT_ID = ENV_CONFIG.GOOGLE_CLIENT_ID;
-const CLIENT_SECRET = ENV_CONFIG.GOOGLE_CLIENT_SECRET;
-const REDIRECT_URI = ENV_CONFIG.GOOGLE_CLIENT_PLAYGROUND;
-const REFRESH_TOKEN = ENV_CONFIG.GOOGLE_REFRESH_TOKEN;
-
 const myOAuth2Client = new google.auth.OAuth2(
-    CLIENT_ID,
-    CLIENT_SECRET,
-    REDIRECT_URI
+    ENV_CONFIG.GOOGLE_CLIENT_ID,
+    ENV_CONFIG.GOOGLE_CLIENT_SECRET,
+    ENV_CONFIG.GOOGLE_CLIENT_PLAYGROUND
 );
 
 
 // Set Refresh Token vào OAuth2Client Credentials
 myOAuth2Client.setCredentials({
-    refresh_token: REFRESH_TOKEN
+    refresh_token: ENV_CONFIG.GOOGLE_REFRESH_TOKEN
 })
 
 
@@ -31,9 +26,9 @@ export async function sendToEmail(email: string, otp: string) {
             auth: {
                 type: 'OAuth2',
                 user: 'lozvai123@gmail.com',
-                clientId: CLIENT_ID,
-                clientSecret: CLIENT_SECRET,
-                refreshToken: REFRESH_TOKEN,
+                clientId: ENV_CONFIG.GOOGLE_CLIENT_ID,
+                clientSecret: ENV_CONFIG.GOOGLE_CLIENT_SECRET,
+                refreshToken: ENV_CONFIG.GOOGLE_REFRESH_TOKEN,
                 accessToken: `${accessToken}`,
             },
         });
