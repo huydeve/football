@@ -46,12 +46,12 @@ To use the Football Management Web App, follow these steps:
 ## Demo Account
 
 To explore the functionality of the Football Management Web App, you can use the following demo account:
-# ADMIN
-- **Username:** demo_user
-- **Password:** Demo123!
-# USER
-- **Username:** demo_user
-- **Password:** Demo123!
+### ADMIN
+- **Username:** user01@gmail.com
+- **Password:** 123456@
+### USER
+- **Username:** admin01@gmail.com
+- **Password:** 123456@
 Please note that this demo account is shared and may be accessed by multiple users simultaneously. Consequently, any changes made by one user may affect the experience for others.
 
 
