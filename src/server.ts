@@ -9,12 +9,13 @@ import http from "http";
 import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
+import { ENV_CONFIG } from "./configs/env.config";
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort("8080");
+var port = normalizePort(ENV_CONFIG.PORT);
 app.set("port", port);
 
 /**
