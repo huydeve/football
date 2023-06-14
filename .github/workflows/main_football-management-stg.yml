@@ -55,8 +55,8 @@ jobs:
           app-name: 'football-management-stg'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_324C03B63C22417C9849A2F014C3F8F6 }}
-          package: nest.zip
+          package: express.zip
           
       - name: Delete zip file
-        run: rm nest.zip
+        run: rm express.zip
 
