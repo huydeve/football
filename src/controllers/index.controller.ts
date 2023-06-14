@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET home page. */
 router.get("/", checkNotAdmin, function (req: Request, res: Response, next: NextFunction) {
 
-  res.render("index", { title: "Hello" });
+  res.render("index", { title: "Football Management" });
 });
 
 export default router;
