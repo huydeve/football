@@ -46,16 +46,12 @@ To use the Football Management Web App, follow these steps:
 ## Demo Account
 
 To explore the functionality of the Football Management Web App, you can use the following demo account:
-
+# ADMIN
 - **Username:** demo_user
 - **Password:** Demo123!
-
+# USER
+- **Username:** demo_user
+- **Password:** Demo123!
 Please note that this demo account is shared and may be accessed by multiple users simultaneously. Consequently, any changes made by one user may affect the experience for others.
 
-## Support
 
-If you encounter any issues or have questions regarding the Football Management Web App, please reach out to our support team at [support@example.com](mailto:support@example.com). We will be happy to assist you.
-
-## License
-
-The Football Management Web App is licensed under the [MIT License](LICENSE). Feel free to modify and distribute the app as per the terms of the license.
