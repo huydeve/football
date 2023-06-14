@@ -58,4 +58,4 @@ jobs:
           package: express.zip
           
       - name: Delete zip file
-        run: rm nest.zip
+        run: rm express.zip
