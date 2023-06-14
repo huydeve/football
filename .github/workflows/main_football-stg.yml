@@ -52,7 +52,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'football-stg'
+          app-name: 'football-management-stg'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_994ce44d78624e41a162911d0314949b }}
           package: express.zip
