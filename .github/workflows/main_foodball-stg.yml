@@ -23,8 +23,8 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build --force
+          npm install --force
+          npm run build 
           
       - name: Zip all files for upload between jobs
         run: zip --symlinks -r express.zip ./*
