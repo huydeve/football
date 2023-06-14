@@ -5,11 +5,12 @@
  */
 
 import app from "./app";
-import http from "http";
+import https from "https";
 import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
 import { ENV_CONFIG } from "./configs/env.config";
+import { readFile, readFileSync } from "fs";
 
 /**
  * Get port from environment and store in Express.
@@ -22,7 +23,10 @@ app.set("port", port);
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+var server = https.createServer({
+  cert: readFileSync('cert.pem'),
+  key: readFileSync('key.pem'),
+}, app);
 
 startServer();
 /**
