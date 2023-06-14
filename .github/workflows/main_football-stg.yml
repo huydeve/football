@@ -54,7 +54,7 @@ jobs:
         with:
           app-name: 'football-stg'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9DE6A5295A7040C2A8BC9528A0CE4498 }}
+          publish-profile: ${{ secrets.AzureAppService_PublishProfile_994ce44d78624e41a162911d0314949b }}
           package: express.zip
           
       - name: Delete zip file
