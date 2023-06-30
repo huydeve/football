@@ -10,7 +10,6 @@ import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
 import { ENV_CONFIG } from "./configs/env.config";
-import fs from "fs";
 
 /**
  * Get port from environment and store in Express.
@@ -23,7 +22,7 @@ app.set("port", port);
  * Create HTTP server.
  */
 
-var server = http.createServer( app);
+var server = http.createServer(app);
 
 startServer();
 /**
