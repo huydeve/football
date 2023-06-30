@@ -28,7 +28,6 @@ const { google } = require('googleapis');
 
 
 
-app.use(AuthorizationHandler.authorizeClientCertificate)
 
 app.use(session({
   secret: ENV_CONFIG.GOOGLE_CLIENT_SECRET || "default",
@@ -69,6 +68,8 @@ app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(convertMethod);
 
 app.use("/", indexRouter);
+
+app.use(AuthorizationHandler.authorizeClientCertificate)
 app.use("/nations", nationRouter);
 app.use("/auth", authRouter);
 app.use("/players", playersRouter);
