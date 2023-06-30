@@ -66,10 +66,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use(convertMethod);
+app.use(function requireHTTPS(req, res, next) {
+  var isAzure = req.get('x-site-deployment-id'),
+    isSsl = req.get('x-arr-ssl');
 
+  if (isAzure && !isSsl) {
+    return res.redirect('https://' + req.get('host') + req.url);
+  }
+
+  next();
+})
 app.use("/", indexRouter);
 
-app.use(AuthorizationHandler.authorizeClientCertificate)
 app.use("/nations", nationRouter);
 app.use("/auth", authRouter);
 app.use("/players", playersRouter);
