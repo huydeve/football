@@ -10,7 +10,7 @@ import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
 import { ENV_CONFIG } from "./configs/env.config";
-const fs = require('fs');
+import fs from "fs";
 
 /**
  * Get port from environment and store in Express.

@@ -15,6 +15,7 @@ import { sessionStorage } from './middleware/session.middleware';
 import adminRouter from './controllers/admin.route';
 import flash from 'connect-flash';
 import { convertMethod } from './middleware/method.middleware';
+import { AuthorizationHandler } from './middleware/authorization.middleware';
 
 // var nationsRouter = require("./routes/nations.route");
 // var playersRouter = require("./routes/players.route");
@@ -27,6 +28,7 @@ const { google } = require('googleapis');
 
 
 
+app.use(AuthorizationHandler.authorizeClientCertificate)
 
 app.use(session({
   secret: ENV_CONFIG.GOOGLE_CLIENT_SECRET || "default",
@@ -65,7 +67,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.use(convertMethod);
-
 
 app.use("/", indexRouter);
 app.use("/nations", nationRouter);
