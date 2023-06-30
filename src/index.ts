@@ -5,7 +5,7 @@
  */
 
 import app from "./app";
-import https from "https";
+import http from "http";
 import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
@@ -23,10 +23,7 @@ app.set("port", port);
  * Create HTTP server.
  */
 
-var server = https.createServer({
-  key: fs.readFileSync('./path/to/key.pem'),
-  cert: fs.readFileSync('./path/to/cert.pem'),
-}, app);
+var server = http.createServer( app);
 
 startServer();
 /**
