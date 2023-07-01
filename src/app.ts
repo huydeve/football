@@ -24,9 +24,9 @@ const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 
 // These id's and secrets should come from .env file.
-app.use((req, res, next) => {
-  req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
-})
+// app.use((req, res, next) => {
+//   req.secure ? next() : res.redirect('https://' + req.headers.host + req.url)
+// })
 
 app.use(session({
   secret: ENV_CONFIG.GOOGLE_CLIENT_SECRET || "default",
