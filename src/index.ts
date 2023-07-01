@@ -5,28 +5,26 @@
  */
 
 import app from "./app";
-import https from "https";
+import http from "http";
 import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
 import { ENV_CONFIG } from "./configs/env.config";
-import fs from "fs"
+import enforce from 'express-sslify'
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(ENV_CONFIG.PORT || "8080");
+app.use(enforce.HTTPS({ trustAzureHeader: true }))
+
 app.set("port", port);
 
 /**
  * Create HTTP server.
  */
 
-var server = https.createServer({
-  cert: fs.readFileSync("./path/to/certificate.crt"),
-  key: fs.readFileSync("./path/to/private.key"),
-  ca: fs.readFileSync("./path/to/ca_bundle.crt")
-}, app);
+var server = http.createServer(app);
 
 startServer();
 /**
