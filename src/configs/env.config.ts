@@ -14,5 +14,6 @@ export const ENV_CONFIG = {
     AUTH_TOKEN: process.env.AUTH_TOKEN,
     GOOGLE_CLIENT_PLAYGROUND: process.env.GOOGLE_CLIENT_PLAYGROUND,
     GOOGLE_REFRESH_TOKEN: process.env.GOOGLE_REFRESH_TOKEN,
-    PORT: process.env.PORT
+    PORT: process.env.PORT,
+    GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL
 }
