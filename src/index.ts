@@ -10,13 +10,13 @@ import debug from "debug";
 import { mongoConnect } from "./configs/mongo.config";
 import client from "./services/redis.service";
 import { ENV_CONFIG } from "./configs/env.config";
-import enforce from 'express-sslify'
+// import enforce from 'express-sslify'
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(ENV_CONFIG.PORT || "8080");
-app.use(enforce.HTTPS({ trustAzureHeader: true }))
+// app.use(enforce.HTTPS({ trustAzureHeader: true }))
 
 app.set("port", port);
 
